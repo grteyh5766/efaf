@@ -1,1 +1,7 @@
-teste
+{
+  "valid_keys": [
+    "senha123",
+    "chave456",
+    "acesso789"
+  ]
+}
