@@ -1,3 +1,3 @@
 :loop
-@echo AMANHA FICARA PRONTO !!!!!!!
+@echo NATURALIDADE NA CASA DO AMIGO
 goto loop
