@@ -1,4 +1,3 @@
-
 @echo off
 title Kernel Driver (ByPass 1.1)
 mode con: cols=55 lines=20
@@ -34,7 +33,7 @@ cd /d "%USERPROFILE%\Desktop\Release\platform-tools"
 
 rem Loop para alterar os arquivos JSON
 for %%F in (%MREPLAYS_PATH%\*.json) do (
-    powershell -Command "(Get-Content -Path '%%F') -replace '1.108.14', '2.108.14' | Set-Content -Path '%%F'"
+    "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Command "(Get-Content -Path '%%F') -replace '1.108.14', '2.108.14' | Set-Content -Path '%%F'"
 )
 
 rem Envia os arquivos JSON e BIN para o dispositivo Android
