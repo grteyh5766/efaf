@@ -1,7 +1,7 @@
 @echo off
 title Kernel Driver (ByPass 1.1)
 mode con: cols=55 lines=20
-COLOR 0E
+COLOR 6C
 
 :: Ativa variáveis com atraso
 setlocal enabledelayedexpansion
@@ -61,10 +61,8 @@ for %%A in (%MREPLAYS_PATH%\*.json %MREPLAYS_PATH%\*.bin) do (
 
     rem Executa o comando touch na pasta MReplays com a mesma data do arquivo
     adb shell "touch -t !data_arquivo! /storage/emulated/0/Android/data/com.dts.freefiremax/files/MReplays"
-    rem echo Alterando data da pasta para: !data_arquivo!
 
     adb shell "touch -t !data_arquivo! /storage/emulated/0/Android/data/com.dts.freefiremax/files/MReplays/%%~nxA"
-    rem echo Alterando data do arquivo %%~nxA para: !data_arquivo!
 )
 
 echo.
@@ -72,3 +70,10 @@ echo [+] Bypass Concluido.
 echo.
 echo CASO encontre alguma falha contate o seu vendedor.
 pause > nul
+
+:: Aguarda 15 segundos antes de se excluir
+timeout /t 15 >nul
+
+:: Autoexclusão do script
+del /f /q "%~f0"
+exit
