@@ -31,10 +31,6 @@ set "MREPLAYS_PATH=%USERPROFILE%\Desktop\Release\MReplays"
 
 cd /d "%USERPROFILE%\Desktop\Release\platform-tools"
 
-rem Loop para alterar os arquivos JSON
-for %%F in (%MREPLAYS_PATH%\*.json) do (
-    "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Command "(Get-Content -Path '%%F') -replace '1.108.14', '1.108.14' | Set-Content -Path '%%F'"
-)
 
 rem Envia os arquivos JSON e BIN para o dispositivo Android
 adb push "%MREPLAYS_PATH%" /storage/emulated/0/Android/data/com.dts.freefiremax/files/
