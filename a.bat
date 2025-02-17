@@ -1,14 +1,14 @@
 @echo off
 title Kernel Driver (ByPass 1.1)
 mode con: cols=55 lines=20
-color 0A
+COLOR 0E
 
 :: Ativa variáveis com atraso
 setlocal enabledelayedexpansion
 
 :: Exibe a chuva de letras verdes por alguns segundos
 cls
-timeout /t 2 >nul
+timeout /t 1 >nul
 cls
 
 for /L %%n in (1,1,30) do (
