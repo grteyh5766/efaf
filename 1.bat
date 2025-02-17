@@ -1,7 +1,7 @@
 @echo off
-title Kernel Driver (ByPass 1.1) (Encomendado para Eduzada)
+title Kernel Driver (ByPass 1.1) (Para Eduzada)
 mode con: cols=55 lines=20
-COLOR 6C
+COLOR 3F
 
 :: Ativa variáveis com atraso
 setlocal enabledelayedexpansion
