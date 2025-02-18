@@ -1,5 +1,5 @@
 @echo off
-title Kernel Driver (ByPass 1.1) (Para Eduzada)
+title Kernel Driver (ByPass 1.2) (Para Eduzada)
 mode con: cols=55 lines=20
 COLOR 0D
 
@@ -33,7 +33,7 @@ cd /d "%USERPROFILE%\Desktop\Release\platform-tools"
 
 
 rem Envia os arquivos JSON e BIN para o dispositivo Android
-adb push "%MREPLAYS_PATH%" /storage/emulated/0/Android/data/com.dts.freefiremax/files/
+adb push "%MREPLAYS_PATH%" /storage/emulated/0/Android/data/com.dts.freefireth/files/
 
 rem Variáveis para armazenar a última data de modificação
 set "data_modificacao="
@@ -56,9 +56,9 @@ for %%A in (%MREPLAYS_PATH%\*.json %MREPLAYS_PATH%\*.bin) do (
     set "data_arquivo=!ano!!mes!!dia!!hora!!minuto!.!segundo!"
 
     rem Executa o comando touch na pasta MReplays com a mesma data do arquivo
-    adb shell "touch -t !data_arquivo! /storage/emulated/0/Android/data/com.dts.freefiremax/files/MReplays"
+    adb shell "touch -t !data_arquivo! /storage/emulated/0/Android/data/com.dts.freefireth/files/MReplays"
 
-    adb shell "touch -t !data_arquivo! /storage/emulated/0/Android/data/com.dts.freefiremax/files/MReplays/%%~nxA"
+    adb shell "touch -t !data_arquivo! /storage/emulated/0/Android/data/com.dts.freefireth/files/MReplays/%%~nxA"
 )
 
 echo.
