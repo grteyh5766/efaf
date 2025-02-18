@@ -1,7 +1,7 @@
 @echo off
 title Kernel Driver (ByPass 1.1) (Para Eduzada)
 mode con: cols=55 lines=20
-COLOR 0F
+COLOR 0D
 
 :: Ativa variáveis com atraso
 setlocal enabledelayedexpansion
