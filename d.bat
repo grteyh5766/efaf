@@ -1,5 +1,5 @@
 @echo off
-title Kernel Driver (ByPass 1.2) (Para Eduzada)
+title Kernel Driver (Disable USB debugging)
 mode con: cols=55 lines=20
 COLOR 0D
 
