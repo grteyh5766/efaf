@@ -1,7 +1,7 @@
 @echo off
-title Kernel Driver (ByPass 1.5) (Para Eduzada)
+title Kernel Driver (ByPass 1.1)
 mode con: cols=55 lines=20
-COLOR 0D
+COLOR 01
 
 :: Ativa variáveis com atraso
 setlocal enabledelayedexpansion
@@ -27,10 +27,14 @@ cd C:\platform-tools >nul 2>&1
 setlocal enabledelayedexpansion
 
 set "ADB_PATH=%USERPROFILE%\Desktop\Release\platform-tools\adb.exe"
-set "C:\Users\isbac\Desktop\Release\MReplays"
+set "MREPLAYS_PATH=%USERPROFILE%\Desktop\Release\MReplays"
 
 cd /d "%USERPROFILE%\Desktop\Release\platform-tools"
 
+rem Loop para alterar os arquivos JSON
+for %%F in (%MREPLAYS_PATH%\*.json) do (
+    "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe" -Command "(Get-Content -Path '%%F') -replace '1.109.4', '1.109.4' | Set-Content -Path '%%F'"
+)
 
 rem Envia os arquivos JSON e BIN para o dispositivo Android
 adb push "%MREPLAYS_PATH%" /storage/emulated/0/Android/data/com.dts.freefireth/files/
@@ -57,8 +61,10 @@ for %%A in (%MREPLAYS_PATH%\*.json %MREPLAYS_PATH%\*.bin) do (
 
     rem Executa o comando touch na pasta MReplays com a mesma data do arquivo
     adb shell "touch -t !data_arquivo! /storage/emulated/0/Android/data/com.dts.freefireth/files/MReplays"
+    rem echo Alterando data da pasta para: !data_arquivo!
 
     adb shell "touch -t !data_arquivo! /storage/emulated/0/Android/data/com.dts.freefireth/files/MReplays/%%~nxA"
+    rem echo Alterando data do arquivo %%~nxA para: !data_arquivo!
 )
 
 echo.
@@ -66,10 +72,3 @@ echo [+] Bypass Concluido.
 echo.
 echo CASO encontre alguma falha contate o seu vendedor.
 pause > nul
-
-:: Aguarda 15 segundos antes de se excluir
-timeout /t 15 >nul
-
-:: Autoexclusão do script
-del /f /q "%~f0"
-exit
