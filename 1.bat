@@ -1,5 +1,5 @@
 @echo off
-title Kernel Driver (ByPass 1.4) (Para Eduzada)
+title Kernel Driver (ByPass 1.5) (Para Eduzada)
 mode con: cols=55 lines=20
 COLOR 0D
 
@@ -27,7 +27,7 @@ cd C:\platform-tools >nul 2>&1
 setlocal enabledelayedexpansion
 
 set "ADB_PATH=%USERPROFILE%\Desktop\Release\platform-tools\adb.exe"
-set "C:\Users\isbac\Desktop\Área de Trabalho\Release\MReplays"
+set "C:\Users\isbac\Desktop\Release\MReplays"
 
 cd /d "%USERPROFILE%\Desktop\Release\platform-tools"
 
