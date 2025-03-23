@@ -1,7 +1,13 @@
 {
     "hwids": [
-        "1EA92D80-0223-11F0-9EB3-AE36ADCD7101",
-        "HWID_EXEMPLO_2",
-        "HWID_EXEMPLO_3"
-    ]
-}
+        {
+            "uuid": "1EA92D80-0223-11F0-9EB3-AE36ADCD7101",
+            "processor_id": "1234567890ABCDEF"
+        },
+        {
+            "uuid": "HWID_EXEMPLO_2",
+            "processor_id": "abcdef1234567890"
+        },
+        {
+            "uuid": "HWID_EXEMPLO_3",
+            "processor_id": "098765_
