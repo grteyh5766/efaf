@@ -1,1 +1,7 @@
-
+{
+    "hwids": [
+        "HWID_EXEMPLO_1",
+        "HWID_EXEMPLO_2",
+        "HWID_EXEMPLO_3"
+    ]
+}
